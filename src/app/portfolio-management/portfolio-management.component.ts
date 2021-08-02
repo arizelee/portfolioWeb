@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable, throwError} from "rxjs";
 import {catchError, retry} from "rxjs/operators";
-import {Portfolio} from "../model/portfolio";
+import {Portfolio, StockTicker} from "../model/portfolio";
 
 @Component({
   selector: 'app-portfolio-management',
@@ -29,10 +29,14 @@ export class PortfolioManagementComponent implements OnInit {
     })
   }
 
-
-
   getPortfolios(): Observable<Portfolio[]> {
     return this.httpClient.get<Portfolio[]>(this.endpoint + '/all');
   }
+
+  deletePortfolio(id: string) {
+    this.httpClient.delete(this.endpoint + id).subscribe();
+  }
+
+  openTickerDialog(ticker: StockTicker) {}
 
 }

@@ -17,10 +17,10 @@
     <td>{{portfolio.id}} </td>
     <td>{{portfolio.name}}</td>
     <td>{{portfolio.profit}}</td>
-    <button></button>
+    <button (click)="deletePortfolio(portfolio.id)">Delete</button>
 
     <td >
-      <p *ngFor="let ticker of portfolio.tickers">{{ticker.id}}</p>
+      <button (click)="openTickerDialog(ticker)" *ngFor="let ticker of portfolio.tickers">{{ticker.id}}</button>
     </td>
   </tr>
   </tbody>
