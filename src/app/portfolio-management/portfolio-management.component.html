@@ -1,6 +1,29 @@
 
 <h2> Portfolio Manager</h2>
-
 <br>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Profit</th>
+    <th scope="col">Tickers</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let portfolio of portfolios">
+    <td>{{portfolio.id}} </td>
+    <td>{{portfolio.name}}</td>
+    <td>{{portfolio.profit}}</td>
+    <button></button>
+
+    <td >
+      <p *ngFor="let ticker of portfolio.tickers">{{ticker.id}}</p>
+    </td>
+  </tr>
+  </tbody>
+</table>
 
 
