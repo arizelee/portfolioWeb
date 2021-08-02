@@ -11,7 +11,7 @@ import {Portfolio, StockTicker} from "../model/portfolio";
 })
 export class PortfolioManagementComponent implements OnInit {
 
-  endpoint : string = "http://localhost:8080/portfolio";
+  endpoint : string = "http://localhost:8080/portfolio/";
   portfolios : Portfolio[] = [];
 
   constructor(private httpClient: HttpClient) { }
@@ -30,7 +30,7 @@ export class PortfolioManagementComponent implements OnInit {
   }
 
   getPortfolios(): Observable<Portfolio[]> {
-    return this.httpClient.get<Portfolio[]>(this.endpoint + '/all');
+    return this.httpClient.get<Portfolio[]>(this.endpoint + 'all');
   }
 
   deletePortfolio(id: string) {
